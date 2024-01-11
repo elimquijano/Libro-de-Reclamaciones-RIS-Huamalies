@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Iconos -->
+    <link href="asset/icons/boxicons.min.css" rel="stylesheet" />
+    <!-- Boxicons Alternativo-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" rel="stylesheet" />
+    <link href="asset/icons/icon.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap5/bootstrap.min.css" />
+    <script type="text/javascript" src="asset/bootstrap5/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery, Popper.js -->
+    <script type="text/javascript" src="asset/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="asset/popper/popper.min.js"></script>
+
+    <title>Formulario de Reclamaciones</title>
+    <script src="asset/js/event-form.js"></script>
+    <link rel="stylesheet" href="asset/css/formulario.css" />
+  </head>
+  <body class="container bg-primary bg-opacity-10">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs bg-success d-flex" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#reclamaciones"
+          >Realizar un Reclamo</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#consulta"
+          >Consultar el estado de tu reclamo</a
+        >
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content bg-white border border-top-0">
+      <div id="reclamaciones" class="tab-pane active">
+        <div class="container-fluid d-inline d-md-flex">
+          <div class="d-flex justify-content-center align-items-center">
+            <img
+              src="https://img.yumpu.com/14149060/1/500x640/libro-de-reclamaciones-mibanco.jpg"
+              alt="image"
+              style="max-width: 300px"
+            />
+          </div>
+          <div class="flex-md-grow-1">
+            <form
+              enctype="multipart/form-data"
+              id="form-reclamo"
+              method="post"
+              class="card"
+            >
+              <div class="card-header">
+                <div class="alert alert-danger text-center" id="sms">
+                  <strong></strong>
+                </div>
+                <h4 class="text-center">FORMULARIO DE RECLAMO</h4>
+              </div>
+              <div class="card-body">
+                <h6>IDENTIFICACIÓN DEL USUARIO</h6>
+                <div class="input-group py-2">
+                  <span class="input-label input-group-text"
+                    >Apellidos y Nombres:
+                    <label class="text-danger">*</label></span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    required
+                  />
+                </div>
+                <div class="input-group py-2">
+                  <span class="input-label input-group-text"
+                    >Número de DNI: <label class="text-danger">*</label></span
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="dni"
+                    name="dni"
+                    required
+                  />
+                </div>
+                <div class="input-group py-2">
+                  <span class="input-label input-group-text"
+                    >Correo Electrónico:
+                    <label class="text-danger">*</label></span
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="input-group py-2">
+                  <span class="input-label input-group-text"
+                    >Teléfono: <label class="text-danger">*</label></span
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="telefono"
+                    name="telefono"
+                    required
+                  />
+                </div>
+                <div class="py-2">
+                  <h6>DESCRIPCIÓN: <label class="text-danger">*</label></h6>
+                </div>
+                <textarea
+                  id="descripcion"
+                  name="descripcion"
+                  class="form-control"
+                  maxlength="500"
+                ></textarea>
+                <div class="py-2">
+                  <h6>
+                    Adjuntar Pruebas(<label class="text-danger">opcional</label
+                    >):
+                  </h6>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    name="image"
+                    accept="image/x-png,image/gif,image/jpeg,image/jpg"
+                  />
+                </div>
+                <div class="py-4 text-center">
+                  <input
+                    type="reset"
+                    class="btn btn-secondary"
+                    value="Limpiar"
+                  />
+                  <input
+                    type="submit"
+                    class="btn btn-danger"
+                    id="btn_form"
+                    value="Enviar"
+                  />
+                </div>
+                <div class="container text-center input-label">
+                  (<label class="text-danger">*</label>) campos obligatorios
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="consulta" class="container tab-pane fade">
+        <div class="row">
+          <div class="col-12">
+            <div class="p-4">
+              <!-- formulario -->
+              <form id="formConsulta">
+                <h4 class="py-2">Criterios de búsqueda</h4>
+                <label for="b_dni">Buscar por N° de DNI:</label>
+                <div class="input-group py-2">
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="b_dni"
+                    id="b_dni"
+                    required
+                    placeholder="Ingrese su DNI"
+                  />
+                  <input class="btn btn-danger" type="submit" value="Buscar" />
+                </div>
+              </form>
+              <!-- tabla de resultados -->
+              <div class="table-responsive py-4" id="tabla-resultado">
+                <h6>Resultado encontrado:</h6>
+                <div class="text-center" id="tabla-resultado1">No se encontró ningun reclamo perteneciente al DNI ingresado...</div>
+                <table class="table table-bordered table-hover" id="tabla-resultado2">
+                  <thead class="text-center bg-primary text-white">
+                    <tr>
+                      <th>USUARIO</th>
+                      <th>FECHA</th>
+                      <th>ESTADO</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTabRes">
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

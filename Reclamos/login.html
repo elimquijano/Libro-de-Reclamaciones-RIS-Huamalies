@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-In</title>
+
+    <!-- Iconos -->
+    <link href="asset/icons/boxicons.min.css" rel="stylesheet" />
+    <!-- Boxicons Alternativo-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" rel="stylesheet" />
+    <link href="asset/icons/icon.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap5/bootstrap.min.css" />
+    <script type="text/javascript" src="asset/bootstrap5/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery, Popper.js -->
+    <script type="text/javascript" src="asset/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="asset/popper/popper.min.js"></script>
+
+    <!-- recursos propios -->
+    <link rel="stylesheet" href="asset/css/access.css" />
+    <script src="asset/js/event-form.js"></script>
+    
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-center shadow-lg border">
+      <div class="image">
+        <img
+          src="https://img.freepik.com/vector-gratis/ilustracion-concepto-cuenta_114360-399.jpg?w=740"
+          alt=""
+        />
+      </div>
+      <form
+        id="form-login"
+        method="post"
+        class="formulario flex-grow-1 p-2 border-left"
+      >
+        <!-- alerta -->
+        <div class="alert alert-danger text-center" id="sms">
+          <strong></strong>
+        </div>
+
+        <div class="p-2 text-center"><h1>Log-In</h1></div>
+        <div class="p-2">
+          <input
+            class="border rounded-lg p-2 w-100"
+            type="email"
+            name="usuario"
+            id="usuario"
+            placeholder="Ingrese su correo electrónico"
+            required
+          />
+        </div>
+        <div class="p-2">
+          <input
+            class="border rounded-lg p-2 w-100"
+            type="password"
+            id="contraseña"
+            name="contraseña"
+            placeholder="Ingrese su contraseña"
+            required
+          />
+        </div>
+        <div class="p-2 text-center">
+          <input
+            type="submit"
+            value="Continuar"
+            class="btn btn-primary container-fluid"
+            id="btn_login"
+          />
+        </div>
+        <div class="p-2 text-center">
+          ¿Olvidó la contraseña?
+          <a href="php/recover-account.php">Recupere Aquí</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
